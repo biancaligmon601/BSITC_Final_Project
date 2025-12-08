@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Aesthetic Bar Chart</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            background: #f5f5f8;
+        }
+
+        .chart-box {
+            width: 600px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+<div class="chart-box">
+    <h2 style="text-align:center; margin-bottom:20px;">Most Famous Tourist Spots</h2>
+    <canvas id="touristChart"></canvas>
+</div>
+
+<script>
+const ctx = document.getElementById('touristChart').getContext('2d');
+
+// Custom plugin for 3D shadow effect
+const barShadow = {
+    id: 'barShadow',
+    afterDatasetsDraw(chart, args, options) {
+        const { ctx } = chart;
+        chart.data.datasets.forEach((dataset, i) => {
+            const meta = chart.getDatasetMeta(i);
+            meta.data.forEach(bar => {
+                ctx.save();
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+                ctx.filter = "blur(6px)";
+                ctx.fillRect(bar.x - bar.width / 2, bar.y + 3, bar.width, 10);
+                ctx.restore();
+            });
+        });
+    }
+};
+
+new Chart(ctx, {
+    type: 'bar',
+    plugins: [barShadow],
+    data: {
+        labels: ['Boracay', 'El Nido', 'Bohol', 'Baguio', 'Siargao'],
+        datasets: [{
+            label: 'Popularity Score',
+            data: [88, 55, 64, 60, 70],
+            backgroundColor: [
+                '#D4AF37', // Gold
+                '#18206F', // Navy
+                '#CBCBD4', // Gray
+                '#F2F2F5', // Soft White Smoke
+                '#B8962E'  // Deep Gold
+            ],
+            borderRadius: 12,
+            borderSkipped: false
+        }]
+    },
+    options: {
+        responsive: true,
+        animation: {
+            duration: 1400,
+            easing: 'easeOutQuint'
+        },
+        plugins: {
+            legend: { display: false }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                grid: { color: "#e6e6e6" }
+            },
+            x: {
+                grid: { display: false }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
