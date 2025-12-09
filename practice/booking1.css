@@ -1,0 +1,160 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #bad3f6;
+}
+
+
+/* CONTAINER */
+.container {
+  padding: 40px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+/* BOOKING CARD */
+.booking-card {
+  width: 100%;
+  max-width: 1150px;
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* TOP SECTION */
+.booking-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hotel-img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.map-img {
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-left: auto;
+}
+
+.hotel-info {
+  flex: 1;
+}
+
+.hotel-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.1rem;
+}
+
+.tag {
+  background: #eee;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.location {
+  margin-top: 5px;
+  color: #555;
+}
+
+/* HORIZONTAL LINE */
+hr {
+  margin: 20px 0;
+}
+
+/* BOTTOM SECTION */
+.booking-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail .label {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.date {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.time {
+  color: #666;
+}
+
+.center-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bubble {
+  background: #f1f1f1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.price-info {
+  text-align: right;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.discount {
+  font-size: 0.9rem;
+}
+
+.cross {
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .booking-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .map-img {
+    margin-left: 0;
+  }
+
+  .booking-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
