@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Travel Vista </title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Travel<span>Vista</span></div>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#discover">Discover</a>
+        <a href="#community">Community</a>
+        <a href="#deals">Special Deals</a>
+        <a href="#destination">Destination</a>
+        <a href="#about">About Us</a>
+        <a href="#map">Map</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-outline">Register</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+ <div class="hero">
+  <div class="overlay"></div>
+
+  <div class="content">
+    <br>
+     <h1>The right destination for you <br />and your family</h1>
+     <br>
+          <p class="lead">“From hidden gems to famous spots, discover every destination with ease and direction.”</p>
+          <br>  
+          <br>
+          <div class="hero-ctas">
+          <br>
+        <button class="btn btn-primary" id="startSearchBtn">Start your journey</button>
+  </div>
+</div>
+
+
+      <!-- floating search card -->
+      <div class="search-card container">
+        <div class="search-row">
+          <div class="field">
+            <label>Location</label>
+            <input type="text" placeholder="Enter your destination" id="locationInput" />
+          </div>
+
+          <div class="field">
+            <label>Date</label>
+            <input type="date" id="dateInput" />
+          </div>
+
+          <div class="field">
+            <label>People</label>
+            <div class="people-control">
+              <input type="number" id="peopleInput" min="1" value="2" />
+            </div>
+          </div>
+
+          <div class="field field-action">
+            <button class="btn btn-primary" id="exploreBtn">Explore Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Countries / Cards -->
+    <!-- <section class="countries container" aria-labelledby="packagesHeading">
+      <h3 id="packagesHeading"> Island's & City's to travel in Philippines</h3>
+
+      <div class="cards-grid"> -->
+        <!-- card 1 -->
+        <!-- <article class="card">
+          <figure class="card-image">
+            <img src="/images/Baguio city.jpg" alt="BAGUIO " />
+          </figure>
+          <div class="card-body">
+            <h3>BAGUIO CITY<small></small></h3>
+            <p class="price">599</p>
+            <button class="btn btn-small">Read Now</button>
+          </div>
+        </article> -->
+
+        <!-- card 2 -->
+        <!-- <article class="card">
+          <figure class="card-image">
+            <img src="/images/Bohol main.jpg" alt="Bohol" />
+          </figure>
+          <div class="card-body">
+            <h3>BOHOL ISLAND <small></small></h3>
+            <p class="price">999</p>
+            <button class="btn btn-small">Read Now</button>
+          </div>
+        </article> -->
+
+        <!-- card 3 -->
+        <!-- <article class="card">
+          <figure class="card-image">
+            <img src="/images/Boracay main.jpg" alt="Boracay" />
+          </figure>
+          <div class="card-body">
+            <h3>BORACAY ISLAND <small></small></h3>
+            <p class="price">699</p>
+            <button class="btn btn-small">Read Now</button>
+          </div>
+        </article> -->
+
+        <!-- card 4 -->
+        <!-- <article class="card">
+          <figure class="card-image">
+            <img src="/images/El Nido main.jpg" alt="El Nido" />
+          </figure>
+          <div class="card-body">
+            <h3>EL NIDO ISLAND <small></small></h3>
+            <p class="price">799</p>
+            <button class="btn btn-small">Read Now</button>
+          </div>
+        </article>
+      </div>
+    </section> -->
+
+    <!-- Best tour packages -->
+    <section class="packages container" id="deals"><br>
+
+    <br>
+       <h1 class="section-title">Exclusive Tour Packages Made Just for You</h1>
+       <div class="package-grid">
+        <div class="package">
+          <div class="badge"> Benguet - Baguio </div>
+          <img src="/images/Baguio at sunset.jpg" alt="Benguet" />
+          <div class="package-footer">
+            <div class="info">
+              <div class="meta">Included: Air ticket, Hotel, Breakfast, Tours, Airport Transfer</div>
+              <div class="metrics">
+                <span>❤ 86415</span>
+                <span>💬 4586</span>
+              </div>
+            </div>
+            <div class="price-cta">
+              <div class="price">$2999</div>
+              <!-- <button class="btn btn-round">More Info</button> -->
+               <a href="practice/index10.html" target="_blank" class="map-button">View More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="package">
+          <div class="badge">Chocolate Hills - Bohol </div>
+          <img src="/images/Beautiful Bohol Paradise.jpg" alt="Chocolate Hills" />
+          <div class="package-footer">
+            <div class="info">
+              <div class="meta">Included: Air ticket, Hotel, Breakfast, Tours, Airport Transfer</div>
+              <div class="metrics">
+                <span>❤ 86415</span>
+                <span>💬 4586</span>
+              </div>
+            </div>
+            <div class="price-cta">
+              <div class="price">$2999</div>
+              <!-- <button class="btn btn-round">More Info</button> -->
+               <a href="practice/index10.html" target="_blank" class="map-button">View More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="package">
+          <div class="badge">Panay - Boracay </div>
+          <img src="/images/Boracay Island.jpg" alt="Panay" />
+          <div class="package-footer">
+            <div class="info">
+              <div class="meta">Included: Air ticket, Hotel, Breakfast, Tours, Airport Transfer</div>
+              <div class="metrics">
+                <span>❤ 86415</span>
+                <span>💬 4586</span>
+              </div>
+            </div>
+            <div class="price-cta">
+              <div class="price">$2648</div>
+              <!-- <button class="btn btn-round">More Info</button> -->
+               <a href="practice/index10.html" target="_blank" class="map-button">View More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="package">
+          <div class="badge">Island Hopping - El Nido </div>
+          <img src="/images/El Nido Palawan.jpg" alt="Island Hopping" />
+          <div class="package-footer">
+            <div class="info">
+              <div class="meta">Included: Air ticket, Hotel, Breakfast, Tours, Airport Transfer</div>
+              <div class="metrics">
+                <span>❤ 86415</span>
+                <span>💬 4586</span>
+              </div>
+            </div>
+            <div class="price-cta">
+              <div class="price">$2999</div>
+              <!-- <button class="btn btn-round">More Info</button> -->
+              <a href="practice/index10.html" target="_blank" class="map-button">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Destination -->
+    <!-- <section class="destination container" id="about">
+      <div class="dest-inner">
+        <div class="dest-left">
+          <h3>Our Destination</h3>
+
+          <p class="subtitle">choose your next Destination</p>
+          <ul class="dest-list">
+            <li>Baguio</li>
+            <li>Bohol</li>
+            <li>Boracay</li>
+            <li>Siargao</li>
+            <li>El Nido</li>
+            <li>Cebu</li>
+          </ul>
+
+          <p class="includes">Included: Air ticket, Hotel, Breakfast, Tours, Airport transfer</p>
+          <button class="btn btn-outline">MORE INFO</button>
+          
+        </div>
+
+        <div class="dest-right">
+          <div class="plane-image">
+            <img src="/images/Airplane.jpg" alt="Airplane" />
+            <div class="tooltip tooltip-top">El Nido <span>❤ 86415</span></div>
+            <div class="tooltip tooltip-left">Boracay <span>❤ 86415</span></div>
+          </div>
+    </section> -->
+
+
+     
+
+    <!-- Destination -->
+
+     <section class="destination" id="destination">
+      <div class="destination-grid">
+  <h1 class="heading">Destination</h1><br>
+  
+</div>
+
+    <!-- Image Grid -->
+     
+     <div class="destination-grid">
+    <div class="card">
+      <img src="images/Baguio city.jpg" alt="Dahilayan Adventure Park">
+      <div class="card-info">
+        <h3>1. Baguio </h3>
+        <p>The “Summer Capital of the Philippines,” known for cool weather, pine trees, and cozy mountain vibes.</p>
+        <a href=".vscode/vication/index9.html" target="_blank" class="map-button">View Map</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Beautiful Bohol Paradise.jpg" alt="Camp Phillips">
+      <div class="card-info">
+        <h3>2. Bohol </h3>
+        <p>Famous for the Chocolate Hills, tarsiers, and beautiful beaches with rich history.</p>
+        <a href=".vscode/vication/index2.html" target="_blank" class="map-button">View Map</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Boracay Island.jpg" alt="Cinchona Forest Reserve">
+      <div class="card-info">
+        <h3>3. Boracay </h3>
+        <p>A world-class island with powdery white sand, clear waters, and vibrant nightlife.</p>
+        <a href=".vscode/vication/index3.html" target="_blank" class="map-button">View Map</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/Siargao2.jpg" alt="Mangima Canyon">
+      <div class="card-info">
+        <h3>4. Siargao </h3>
+        <p> The Surfing Capital of the Philippines, loved for laid-back vibes, lagoons, and island hopping.</p>
+        <a href=".vscode/vication/index4.html" target="_blank" class="map-button">View Map</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/El Nido main.jpg" alt="Kampo Ni Juan">
+      <div class="card-info">
+        <h3>5. El Nido </h3>
+        <p>A paradise of limestone cliffs, turquoise lagoons, and stunning island adventures.</p>
+        <a href=".vscode/vication/index5.html" target="_blank" class="map-button">View Map</a>
+      </div>
+    </div>
+    </div>
+
+   <!-- MAP -->
+    <section class="map" id="map">
+      <div class="map-grid">
+  <h2 class="heading"><span>Map</span></h2>
+  <p class="subheading"></p>
+</div>
+   
+   <!-- Image Grid -->
+     <div class="map-grid">
+    
+      <div class="card-info">
+        <h3>  </h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15978843.80151891!2d115.129078375!3d12.10633936463127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x324053215f87de63%3A0x784790ef7a29da57!2sPhilippines!5e0!3m2!1sen!2sph!4v1765048359589!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+    </div>
+    
+
+
+    <!-- Subscribe -->
+    <section class="subscribe container">
+      <h3>Subscribe &amp; get special discount</h3>
+      <p class="lead">For inquiries, support, or feedback, contact our team and we’ll get back to you promptly.</p>
+      <form id="subscribeForm" class="subscribe-form">
+        <input type="email" id="emailInput" placeholder="Enter your Email Address" required />
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MR.travel — All rights reserved.</p>
+    </div>
+  </footer> -->
+
+  <script src="app.js"></script>
+
+  
+</body>
+
+</html>
