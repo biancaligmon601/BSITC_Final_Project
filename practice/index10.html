@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MR.travel — Responsive Travel UI</title>
+  <link rel="stylesheet" href="style10.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1>The right destination for you and your family</h1>
+          <p class="lead">Creative taglines have the capability of capturing the attention of a potential customer.</p>
+
+          <div class="search-block">
+            <button class="btn-primary large">Start your search</button>
+            <div class="search-card">
+              <div class="search-row">
+                <label>Location</label>
+                <input placeholder="Enter your destination" id="searchLocation">
+              </div>
+              <div class="search-row">
+                <label>Check-In</label>
+                <input type="date" id="searchDate">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      <!-- countries strip overlapping the hero bottom -->
+      <div class="countries container">
+        <h4>Countries to travel</h4>
+        <div class="country-grid" id="countryGrid">
+          <!-- country cards (with "More Info") will be added by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION: filters + hotel list -->
+    <section class="results container" id="discover">
+      <aside class="filters">
+        <h5>Filter</h5>
+        <div class="filter-group">
+          <label><input type="checkbox" data-filter="Swimming Pool"> Swimming Pool</label>
+          <label><input type="checkbox" data-filter="Gym"> Gym</label>
+          <label><input type="checkbox" data-filter="Spa"> Spa</label>
+          <label><input type="checkbox" data-filter="Bar"> Bar</label>
+          <label><input type="checkbox" data-filter="Wi-Fi"> Wi-Fi</label>
+          <label><input type="checkbox" data-filter="Parking"> Parking</label>
+        </div>
+      </aside>
+
+      <div class="list">
+        <h3>Hotels → Jaipur</h3>
+        <div id="hotelList">
+          <!-- hotel cards inserted by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAIL / BOOKING SECTION -->
+    <section class="detail container" id="detail" hidden>
+      <h2 id="detailTitle">Hotel Title</h2>
+
+      <div class="detail-grid">
+        <div class="gallery">
+          <img id="mainPhoto" src="https://picsum.photos/seed/h1/1200/700" alt="hotel">
+        </div>
+
+        <div class="sidebar-stats">
+          <div class="stat"><span class="big" id="rating">4.80</span><span>Very Good</span></div>
+          <div class="stat"><span class="big" id="rooms">50</span><span>Rooms Left</span></div>
+          <div class="stat"><span class="big" id="price">12000</span><span>Rs / night</span></div>
+          <div class="stat"><span class="big" id="discount">15%</span><span>Discount</span></div>
+          <button class="btn-primary" id="bookNowTop">Book Now</button>
+        </div>
+      </div>
+
+      <div class="amenities">
+        <h4>Amenities</h4>
+        <ul id="amenList"></ul>
+
+        <h4>Description</h4>
+        <p id="desc">Luxury hotel near Amber Fort</p>
+      </div>
+
+      <!-- Booking form similar to screenshot (Guest Details) -->
+      <div class="booking-box">
+        <h4>Booking Details</h4>
+        <div class="booking-card">
+          <div class="booking-left">
+            <h5 id="bookingHotelName">Hotel Amber Palace</h5>
+            <p id="bookingAddress">Amber Road, Jaipur</p>
+            <div class="small-info">Check-In: <strong id="bookingCheckIn"> Th 11 Dec 2025</strong></div>
+            <div class="small-info">Check-Out: <strong id="bookingCheckOut"> Fri 12 Dec 2025</strong></div>
+          </div>
+          <div class="booking-right">
+            <img id="bookingThumb" src="https://picsum.photos/seed/hthumb/120/80" alt="thumb">
+          </div>
+        </div>
+
+        <form id="bookingForm" class="guest-form">
+          <div class="form-row">
+            <label>Name</label>
+            <input id="guestName" required placeholder="Full name">
+            <label>Email Id</label>
+            <input id="guestEmail" type="email" placeholder="email@example.com">
+            <label>Mobile</label>
+            <input id="guestMobile" placeholder="09xxxxxxxxx">
+          </div>
+
+          <div class="form-actions">
+            <!-- <button type="submit" class="btn-primary large">Book Now</button> -->
+            <a href="booking1.html" target="_blank" class="button">Book Now</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© travel — built with ❤️</div>
+  </footer>
+
+  <script src="app10.js"></script>
+</body>
+</html>
