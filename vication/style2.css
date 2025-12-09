@@ -1,0 +1,158 @@
+/* ELECTIVE */
+
+/* MAP */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Leaflet map box */
+#map {
+    width: 900px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Base layout */
+body {
+    background: url('assets/navy.png');
+    width: 100%;
+    background-size: cover;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 0;
+}
+
+/* Main container */
+.container {
+    background: url('assets/sand.png');
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    transition: all 0.3s ease;
+}
+
+/* Title */
+h1 {
+    margin-bottom: 25px;
+    color: #2c2323;
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#cityInput {
+    padding: 10px;
+    width: 65%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #1c5f8b;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+#searchBtn:hover {
+    background-color: #13374e;
+}
+
+/* Weather info card */
+.weather-card {
+    background-color: #cbcbd4;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease;
+}
+
+.weather-card img {
+    width: 90px;
+    height: 90px;
+    margin: 10px 0;
+}
+
+.weather-card p {
+    margin: 5px 0;
+    color: #0f0e0e;
+}
+
+/* Error message */
+.error {
+    color: rgb(160, 34, 34);
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #cityInput {
+        width: 60%;
+        font-size: 14px;
+    }
+
+    #searchBtn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .weather-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .weather-card p {
+        font-size: 14px;
+    }
+}
+
+
+
+

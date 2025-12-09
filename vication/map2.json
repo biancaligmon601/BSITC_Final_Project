@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Baguio",
+        "lat": 16.4023,
+        "lng": 120.5960,
+        "description": "The Summer Capital of the Philippines.",
+        "image": ""
+    },
+    {
+        "name": "Bohol",
+        "lat": 9.84999,
+        "lng": 124.14354,
+        "description": "Home of Chocolate Hills and Panglao Beach.",
+        "image": ""
+    },
+    {
+        "name": "Boracay",
+        "lat": 11.9674,
+        "lng": 121.9248,
+        "description": "World-famous for White Beach.",
+        "image": ""
+    },
+    {
+        "name": "Siargao",
+        "lat": 9.8486,
+        "lng": 126.0458,
+        "description": "Surfing Capital of the Philippines.",
+        "image": ""
+    },
+    {
+        "name": "El Nido",
+        "lat": 11.1797,
+        "lng": 119.3911,
+        "description": "Known for lagoons and limestone cliffs.",
+        "image": ""
+    }
+]
+
+
+
+
+
