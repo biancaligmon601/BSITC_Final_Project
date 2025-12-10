@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Destination Map & Weather</title>
+    <link rel="stylesheet" href="styles/map_weather_style.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+</head>
+<body>
+
+    <header class="map-header">
+        <h1><i class="fas fa-map-marked-alt"></i> Philippines Destination Explorer</h1>
+        <p>Interactive Map with User Location, Search, and Weather Updates for 15 Destinations.</p>
+    </header>
+
+    <main class="map-main">
+
+        <aside class="info-sidebar">
+            
+            <section class="user-location-panel">
+                <h2><i class="fas fa-street-view"></i> Your Current Location</h2>
+                <div id="userLocationOutput" class="info-box loading">
+                    <i class="fas fa-spinner fa-spin"></i> Locating you...
+                </div>
+                <button id="findMeButton" class="action-button primary-btn"><i class="fas fa-crosshairs"></i> Recenter Map to Me</button>
+            </section>
+            
+            <section class="weather-panel">
+                <h2><i class="fas fa-cloud-sun"></i> Weather Forecast</h2>
+                <p class="guide-text">Select a destination on the map or search to see the forecast.</p>
+                <div id="weatherOutput" class="info-box">
+                    <p>Weather data will appear here.</p>
+                </div>
+            </section>
+            
+            <section class="destination-list-panel">
+                 <h2><i class="fas fa-list-ul"></i> Featured Destinations (15)</h2>
+                 <ul id="destinationList">
+                      </ul>
+            </section>
+
+        </aside>
+
+        <section class="map-container">
+            <div id="phMap">
+                </div>
+            
+            <div class="search-overlay">
+                <input type="text" id="mapSearchInput" placeholder="Search for destinations or addresses...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <footer class="map-footer">
+        <p>Map data &copy; OpenStreetMap contributors | Weather data simulated.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+    <script src="scripts/map_weather_logic.js"></script>
+</body>
+</html>
