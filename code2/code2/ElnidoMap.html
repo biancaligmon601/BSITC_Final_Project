@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Weather App - El Nido</title>
+
+    <link 
+     rel="stylesheet" 
+     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <link rel="stylesheet" href="style2.css"> 
+
+    <style>
+       .search-box button {
+            background-color: #007bff; /* A nice blue color */
+            color: white;              /* White text for contrast */
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        
+        /* Basic styles for the layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #192A51;
+        }
+
+        .wrapper {
+            display: flex; 
+            gap: 20px;
+            flex-wrap: wrap; 
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .container {
+            flex: 1; 
+            min-width: 300px;
+            padding: 20px;
+            background-color: #D7BA89;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CSS FIX: Map width corrected to 100% */
+        #map {
+            height: 500px; 
+            width: 100%; 
+            flex: 2; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .error {
+            color: red;
+        }
+        
+        /* Pop-up Image Styling (Limits size) */
+        .leaflet-popup-content img {
+            max-width: 310px;  /* Limits the width */
+            max-height: 200px; /* Limits the height */
+            width: auto;       /* Maintains aspect ratio */
+            height: auto;      /* Maintains aspect ratio */
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+
+    <script 
+     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin="">
+    </script>
+    
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+</head>
+
+<body> 
+
+<div class="wrapper">
+
+    <div class="container">
+        <h1>🌦️Weather App</h1>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="weather-card" id="weatherCard" style="display:none;">
+            <h2 id="cityName"></h2>
+            <img id="weatherIcon">
+            <p id="description"></p>
+            <p><strong>Temperature:</strong> <span id="temperature"></span>°C</p>
+            <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+            <p><strong>Sea Level:</strong> <span id="seaLevel"></span> hPa</p>
+            <p><strong>Wind:</strong> <span id="wind"></span> km/h</p>
+        </div>
+
+        <p id="errorMsg" class="error"></p>
+    </div>
+
+    <div id="map"></div> 
+
+</div>
+
+<script>
+    // --- MAP INITIALIZATION (El Nido Coordinates) ---
+    // Coordinates: Latitude 11.1833, Longitude 119.3833. Zoom 12 for a good view.
+    var map = L.map('map').setView([11.1833, 119.3833], 12); 
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Add Geocoding control for search functionality
+    L.Control.geocoder({
+        position: 'topleft'
+    }).addTo(map);
+
+    // --- GEOMETRIC SHAPE FOR EL NIDO (L.circle) ---
+    var elNidoShape = L.circle([11.1833, 119.3833], {
+        // Radius in meters. 8000m is suitable to encompass the main bay area.
+        radius: 8000, 
+        color: 'purple',        // Unique color for El Nido
+        fillColor: '#6f42c1',   
+        fillOpacity: 0.3,    
+        weight: 3            
+    }).addTo(map)
+      .bindPopup("Loading El Nido details..."); 
+    
+    // --- POP-UP DATA LOADING ---
+    elNidoShape.on('popupopen', function (e) { 
+        // --- Fetch the correct JSON file: ElNido.json ---
+        fetch('ElNido.json') 
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}. Check if 'ElNido.json' is in the same folder.`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // --- Access the correct key: ElNido ---
+                const islandData = data.ElNido; 
+                
+                // Robust check for missing key
+                if (!islandData) {
+                    throw new Error("JSON file loaded, but the 'ElNido' key is missing or invalid.");
+                }
+
+                // Build the pop-up content
+                const content = `
+                    <img src="${islandData.Image_URL}" alt="${islandData.Name}">
+                    <b>${islandData.Name}</b><br>
+                    <p>${islandData.Description}</p>
+                    <small>Lat: ${islandData.Latitude}, Lng: ${islandData.Longitude}</small>
+                `;
+                
+                // Update the pop-up content
+                e.popup.setContent(content);
+            })
+            .catch(error => {
+                console.error('Error fetching JSON data:', error);
+                e.popup.setContent('Error loading details. Please ensure **ElNido.json** exists and contains the **"ElNido"** data key.');
+            });
+    });
+</script>
+
+<script src="script.js"></script>
+
+</body> 
+</html>
