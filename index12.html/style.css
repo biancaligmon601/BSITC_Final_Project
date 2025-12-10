@@ -1,0 +1,482 @@
+/* package_style.css */
+
+/**
+ * =======================================================
+ * 1. BASE STYLES & VARIABLES
+ * =======================================================
+ */
+
+:root {
+    --primary-color: #2980b9; /* Bright Blue */
+    --secondary-color: #3498db; 
+    --accent-color: #27ae60; /* Green for success/buttons */
+    --background-color: #ecf0f1; /* Light Gray Background */
+    --card-bg: #ffffff;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--background-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Icons styling */
+.fas, .far {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/**
+ * =======================================================
+ * 2. HEADER & LAYOUT STRUCTURE
+ * =======================================================
+ */
+
+.package-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 0;
+    box-shadow: var(--shadow-heavy);
+    text-align: center;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.package-header h1 {
+    color: white;
+    font-size: 2.8em;
+    margin-bottom: 5px;
+}
+
+.package-header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.package-main {
+    display: flex;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Control Panel (Sidebar) */
+.control-panel {
+    flex: 0 0 300px; /* Fixed width sidebar */
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    height: fit-content; /* Ensure it wraps content */
+    position: sticky;
+    top: 20px; /* Stick to top when scrolling */
+}
+
+/* Results Panel (Main Content) */
+.results-panel {
+    flex: 1;
+}
+
+.results-info {
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.results-info hr {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}
+
+.initial-message {
+    text-align: center;
+    padding: 50px 20px;
+    border: 2px dashed #ccc;
+    border-radius: var(--border-radius);
+    color: #6c757d;
+    background-color: #f7f7f7;
+    margin-top: 50px;
+}
+
+.initial-message i {
+    margin-top: 20px;
+    color: #aaa;
+    transform: rotate(15deg);
+}
+
+/**
+ * =======================================================
+ * 3. FORM AND FILTER STYLES
+ * =======================================================
+ */
+
+.input-group {
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.control-panel h2 {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+
+.control-panel legend {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #555;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Radio Button Group */
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.radio-group label {
+    padding-left: 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Duration Group */
+.duration-group label {
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+.duration-fields input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+/* Theme Checkboxes */
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    font-size: 0.95em;
+}
+
+.theme-checkbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.loading-text {
+    grid-column: span 2;
+    text-align: center;
+    color: #aaa;
+}
+
+/* General Input Styling */
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+
+/* Buttons */
+.generate-btn, .reset-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 15px;
+}
+
+.generate-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.generate-btn:hover {
+    background-color: #229955;
+    transform: translateY(-1px);
+}
+
+.reset-btn {
+    background-color: #bdc3c7;
+    color: #333;
+}
+
+.reset-btn:hover {
+    background-color: #95a5a6;
+}
+
+
+/**
+ * =======================================================
+ * 4. PACKAGE CARD STYLES
+ * =======================================================
+ */
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.package-card {
+    background-color: var(--card-bg);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.card-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.25em;
+    color: white;
+}
+
+.score-badge {
+    background-color: #f1c40f;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.card-body {
+    padding: 15px;
+    font-size: 0.95em;
+}
+
+.card-body p {
+    margin-bottom: 5px;
+}
+
+.cost-summary {
+    margin-top: 15px;
+    border-top: 1px dashed #eee;
+    padding-top: 10px;
+    text-align: right;
+}
+
+.price-tag {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--accent-color);
+    display: block;
+    margin-top: 5px;
+}
+
+.details-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.details-btn:hover {
+    background-color: #1f6492;
+}
+
+/* Error Message */
+.error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--accent-color);
+    padding: 30px;
+    font-weight: bold;
+    border: 2px dashed var(--accent-color);
+    border-radius: var(--border-radius);
+}
+
+
+/**
+ * =======================================================
+ * 5. MODAL (Detailed Breakdown) STYLES
+ * =======================================================
+ */
+
+.breakdown-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.breakdown-modal {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 550px;
+    box-shadow: var(--shadow-heavy);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.breakdown-modal h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.breakdown-modal table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.breakdown-modal th, .breakdown-modal td {
+    padding: 10px 0;
+    text-align: left;
+    border-bottom: 1px dotted #ccc;
+}
+
+.breakdown-modal th:last-child, .breakdown-modal td:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+.total-row th {
+    background-color: #f7f7f7;
+    border-bottom: 3px solid var(--accent-color);
+    font-size: 1.1em;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/**
+ * =======================================================
+ * 6. FOOTER & RESPONSIVENESS
+ * =======================================================
+ */
+
+.package-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #6c757d;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1000px) {
+    .package-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .control-panel {
+        position: static;
+        width: 100%;
+    }
+    .package-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .package-header h1 {
+        font-size: 2em;
+    }
+    .control-panel {
+        padding: 20px;
+    }
+    .themes-grid {
+        grid-template-columns: 1fr;
+    }
+    .duration-fields {
+        display: flex;
+        justify-content: space-between;
+    }
+    .duration-fields input {
+        flex: 1;
+        margin-right: 10px;
+    }
+}
