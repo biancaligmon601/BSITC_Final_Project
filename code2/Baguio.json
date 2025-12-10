@@ -1,0 +1,9 @@
+{
+  "Baguio": {
+    "Name": "Baguio City, Philippines",
+    "Description": "The Summer Capital of the Philippines, known for its cool climate, pine trees, Burnham Park, and various strawberry farms.",
+    "Image_URL": "../images/BaguioPopUp2.jpg", 
+    "Latitude": 16.4000,
+    "Longitude": 120.5900
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Bohol": {
+    "Name": "Bohol Province",
+    "Description": "Bohol is a paradise where you can marvel at the Chocolate Hills, meet tiny tarsiers, enjoy a scenic Loboc River cruise, relax on Panglao’s white beaches, and explore the historic Baclayon Church.",
+    "Image_URL": "../images/BoholPopUp.jpg",  
+    "Latitude": 9.84999,
+    "Longitude": 124.14354
+  }
+}

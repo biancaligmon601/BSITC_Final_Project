@@ -1,0 +1,9 @@
+{
+  "Boracay": {
+    "Name": "Boracay Island",
+    "Description": "World-famous for White Beach, pristine sands, and vibrant nightlife in Aklan, Philippines.",
+    "Image_URL": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Boracay_Beach.jpg", 
+    "Latitude": 11.976,
+    "Longitude": 121.921
+  }
+} 

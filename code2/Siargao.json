@@ -1,0 +1,9 @@
+{
+  "Siargao": {
+    "Name": "Siargao Island",
+    "Description": "Known as the surfing capital of the Philippines, featuring the world-famous Cloud 9 wave and pristine turquoise lagoons.",
+    "Image_URL": "https://upload.wikimedia.org/wikipedia/commons/2/25/Cloud_9_Siargao.jpg", 
+    "Latitude": 9.867,
+    "Longitude": 126.05
+  }
+}
