@@ -1,0 +1,263 @@
+/* map_weather_style.css */
+
+/**
+ * =======================================================
+ * 1. BASE STYLES & LAYOUT
+ * =======================================================
+ */
+
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #00bcd4; /* Teal */
+    --accent-color: #ffc107; /* Yellow/Orange */
+    --background-color: #f4f7f9;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --font-base: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--background-color);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.map-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.map-header h1 {
+    font-size: 2em;
+    color: white;
+}
+
+/* Main Layout */
+.map-main {
+    display: flex;
+    max-width: 1600px;
+    margin: 20px auto;
+    height: 80vh; /* Set a fixed height for the map/sidebar area */
+    gap: 20px;
+}
+
+/* Sidebar Styling */
+.info-sidebar {
+    flex: 0 0 350px; /* Fixed width sidebar */
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+    height: 100%;
+}
+
+.info-sidebar h2 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.info-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    min-height: 50px;
+}
+
+.guide-text {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Action Button */
+.action-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: #333;
+}
+
+.primary-btn:hover {
+    background-color: #ffae00;
+}
+
+/* Destination List */
+.destination-list-panel {
+    margin-top: 20px;
+}
+
+#destinationList {
+    list-style: none;
+    padding: 0;
+}
+
+#destinationList li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+#destinationList li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Map Container */
+.map-container {
+    flex: 1;
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+#phMap {
+    height: 100%;
+    width: 100%;
+}
+
+/* Search Overlay */
+.search-overlay {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    width: 80%;
+    max-width: 450px;
+}
+
+#mapSearchInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#searchButton {
+    padding: 10px 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#searchButton:hover {
+    background-color: #0097a7;
+}
+
+/**
+ * =======================================================
+ * 3. DYNAMIC CONTENT STYLES
+ * =======================================================
+ */
+
+/* Weather Box specific styles */
+.weather-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.weather-icon {
+    font-size: 2.5em;
+    color: var(--accent-color);
+}
+
+.temperature {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.weather-status {
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    padding: 3px 0;
+}
+
+/* User Location Loading state */
+.user-location-panel .loading {
+    text-align: center;
+    color: #6c757d;
+}
+
+/* Leaflet Custom Marker Style (for user location) */
+.user-marker-icon {
+    background-color: #dc3545; /* Red */
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+}
+
+/* Footer */
+.map-footer {
+    text-align: center;
+    padding: 15px;
+    color: #6c757d;
+    font-size: 0.85em;
+    margin-top: 20px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 800px) {
+    .map-main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .info-sidebar {
+        flex: 1 1 auto;
+        height: auto;
+        order: 2; /* Move sidebar below map on mobile */
+    }
+
+    .map-container {
+        flex: 1 1 auto;
+        height: 60vh; /* Give map decent height */
+        order: 1;
+    }
+}
